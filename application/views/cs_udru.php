@@ -29,7 +29,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li ><?php echo anchor('#','หน้าหลัก');?></li>
 					<li><?php echo anchor('#',"ภาพกิจกรรม");?></li>
-					<li><?php echo anchor('l#','ข่าวสาร');?></li>
+					<li><?php echo anchor('#','ข่าวสาร');?></li>
 					<li><?php echo anchor('#','อาจารย์');?></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
@@ -57,7 +57,7 @@
 			<!-- //////// infomation /// -->
 			<div class="panel panel-primary" style="paddint-top:10px;" >
 				<div class="panel-heading"><b class="glyphicon glyphicon-info-sign"></b> 
-					สารสนเทศสาขาวิชา
+					ข่าวสาร
 				</div>
 				<div class="panel-body alert-info" style="padding:10px; word-wrap:break-word;" >
 					11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
@@ -67,7 +67,7 @@
 
 			<div class="panel panel-primary" style="paddint-top:10px;" >
 				<div class="panel-heading"><b class="glyphicon glyphicon-info-sign"></b> 
-					สารสนเทศสาขาวิชา
+					ข่าวสาร
 				</div>
 				<div class="panel-body alert-info" style="padding:10px; word-wrap:break-word;" >
 					222
