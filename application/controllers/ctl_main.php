@@ -15,5 +15,11 @@ class Ctl_main extends CI_Controller {
 		$data["title"] = "อาจารย์ประจำสาขาวิชา";
 		$this->load->view("page_teacher",$data);
 	}
+
+	///back door
+	public function admin(){
+		$data['title'] = "จัดการข้อมูล";
+		$this->load->view("admin",$data);
+	}
 }
 ?>
