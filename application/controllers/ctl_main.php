@@ -10,5 +10,10 @@ class Ctl_main extends CI_Controller {
 		$data['title'] = "cs_udru";
 		$this->load->view("cs_udru",$data);
 	}
+
+	public function page_teacher(){
+		$data["title"] = "อาจารย์ประจำสาขาวิชา";
+		$this->load->view("page_teacher",$data);
+	}
 }
 ?>
