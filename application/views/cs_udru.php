@@ -1,4 +1,4 @@
-<?php $this->load->view("head");?>
+﻿<?php $this->load->view("head");?>
 		<div class="row  col-md-4" style="margin-right:40px;">
 			<div class="panel panel-primary " >
 				<div class="panel-heading"><b class="glyphicon glyphicon-user"></b>  ประธานสาขาวิชา</div>
