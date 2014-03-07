@@ -31,7 +31,25 @@ class Ctl_main extends CI_Controller {
 
 	//add teacher db
 	public function add_teacher_db(){
-		echo $username = $this->input->post('inputUsername');
+		//  upload file picture teacher
+		$config['upload_path'] = './image/pict_teacher/';
+		$config['file_name'] = $this->input->post('inputFile');
+		$config['allowed_type'] = 'git|jpg|png';
+		$config['max_size'] = '1000';
+		$config['max_width'] = '1024';
+		$config['max_height'] = '768';
+		$this->load->library('upload',$config);
+		if(! $this->upload->do_upload()){
+			$error = array('error' => $this->upload->display_error());
+			$this->load->view('admin/add_teacher',$error);
+		}else{
+			$data = array('upload_data' => $this->upload->data());
+			$this->load->view('page_teacher',$data);
+		}
+		// end upload file
+		//--------------------------------------//
+		//input text fild//
+		$username = $this->input->post('inputUser');
 		$password = $this->input->post('inputPassword');
 		$pername = $this->input->post('inputPername');
 		$name = $this->input->post('inputName');
@@ -48,12 +66,7 @@ class Ctl_main extends CI_Controller {
 			'teacher_link' => $link,
 			'teacher_pict' => $file,
 			);
-		foreach ($data as $key => $value ) {
-			# code...
-			echo $value."<br/>";
-			echo "asdf";
-		}
-		//$this->model_main->create_teacher($data);
+		$this->model_main->create_teacher($data);
 		//redirect('cs_udru','refresh');
 	}
 }

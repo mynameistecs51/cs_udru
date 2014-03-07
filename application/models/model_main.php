@@ -5,12 +5,12 @@ class Model_main extends CI_model {
 		parent::__construct();
 	}
 	public function create_teacher($data){
-		foreach ($data as $value) {
-			echo $value;
+		foreach ($data as $key => $value) {
+			echo $key ."=". $value."<br/>";
 		}
 		
 		//$query =  $this->db->insert('teacher',$insert);
-		return true;
+		//return true;
 	}
 }
 ?>
