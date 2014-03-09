@@ -38,10 +38,11 @@ class Ctl_main extends CI_Controller {
 		$name = $this->input->post('inputName');
 		$number = $this->input->post('inputNumber');
 		$link = $this->input->post('inputURL');
-		//$file = $this->input->post('inputFile');
+		$file = $this->input->post('userfile');
 
 		//  upload file picture teacher
 		$config['upload_path'] = './image/pict_teacher/';
+		$config['file_name'] = $name;
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '6144';
 		//$config['max_width']  = '1024';
@@ -62,7 +63,10 @@ class Ctl_main extends CI_Controller {
 		else
 		{
 			$data = array('upload_data' => $this->upload->data());
-
+			foreach ($this->upload->data() as $key => $value) {
+				# code...
+				echo $key ."=".$value."<br/>";
+			}
 			$this->load->view('admin/add_teacher', $data);
 		}
 		// end upload file

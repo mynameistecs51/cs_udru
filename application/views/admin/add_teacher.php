@@ -1,9 +1,10 @@
-﻿<?php $this->load->view("head");?>
-<div class="row col-md-9 col-md-offset-2" >
-	<div class="panel panel-primary" >
-		<div class="panel-heading"><b class="glyphicon glyphicon-user"></b> เพิ่มข้อมูลอาจารย์</div>
-		<div class="panel-body alert-info" style="padding:10px;">			
-			<?php echo form_open_multipart('ctl_main/add_teacher_db','class="form-horizontal" role="form" style="padding:10px;" ');?>
+﻿<?php $this->load->view('head');?>
+<div class="row">
+	<div class="panel panel-primary">
+		<div class="panel-heading" ><p class="glyphicon glyphicon-user">  เพิ่มอาจารย์</p></div>
+		<div class="panel-body">
+
+			<?php echo form_open_multipart('ctl_main/add_teacher_db',' class="form-horizontal" role="form" ');?>
 			<div class="form-group">									
 				<div class="col-sm-10">
 					<label for="inputUser" class="col-sm-3 control-label">user:</label>
@@ -30,19 +31,19 @@
 			</div>
 			<div class="form-group">									
 				<div class="col-sm-10">
-					<?php  $error; ?>
-					<label for="inputFile" class="col-sm-2  control-label" >รูปภาพ:</label>
-					<input type="file" name="inputFile" class="input-sm col-sm-3" size="20" />
-
+					<?php // $error; ?>
+					<label for="userfile" class="col-sm-2  control-label" >รูปภาพ:</label>
+					<input type="file" name="userfile" class="input-sm col-sm-3" size="20" />
 				</div>
 			</div>
 			<div class="form-group"  style="float:right; padding-right:18px;">
-				<button type="reset" class="btn btn-primary">ยกเลิก</button>
-				<button type="submit" class="btn btn-primary">บันทึก</button>
+				<input type="reset" class="btn btn-primary" value="ยกเลิก">
+				<input type="submit" class="btn btn-primary" value="บันทึก">
 			</div>
-		</form>
+			</form>
+			<?php echo form_close();?>
+
+		</div>
 	</div>
 </div>
-
-
-<?php $this->load->view("footer");?>
+<?php $this->load->view('footer');?>
