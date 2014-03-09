@@ -39,6 +39,7 @@ class Ctl_main extends CI_Controller {
 		$number = $this->input->post('inputNumber');
 		$link = $this->input->post('inputURL');
 		$file = $this->input->post('inputFile');
+
 		//  upload file picture teacher
 		$config['upload_path'] = './image/pict_teacher/';
 		$config['file_name'] = $this->input->post('inputFile');
@@ -51,36 +52,36 @@ class Ctl_main extends CI_Controller {
 		//$config['file_name']  = $date.$rand;
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);
-		
-		if ( ! $this->upload->do_upload())	{
-			$error = array('error' => $this->upload->display_errors());
-			// $this->load->view('form_post_view', $error);
-                echo $this->upload->display_errors();   // พอคลิก submit แล้วตรงนี้แสดง error You did not select a file to upload.ครับ ไม่ทราบว่าต้องแก้ยังไงครับ
-                foreach ($this->upload->data() as $key => $value) {
-              		# code...
-                	echo $key ." = ".$value."<br/>";
-                }
-                $this->load->view('admin/add_teacher');
-              }else{
-              	$data = array('upload_data' => $this->upload->data());
 
-              	$this->load->view('admin/add_teacher', $data);
-              }
+		if (!$this->upload->do_upload($file)) {
+
+		echo 	$error =  $this->upload->display_errors();
+			$this->load->view('admin/add_teacher');
+			foreach ($this->upload->data() as $key => $value) {
+				# code...
+				echo $key ." =  ".$value."<br/>";
+			}
+			echo "11";
+		}else{
+			$data = array('upload_data' => $this->upload->data());
+			echo "22";
+			$this->load->view('admin/add_teacher', $data);
+		}
 		// end upload file
 		//--------------------------------------//
-              $data = array(
-              	'teacher_id' => "",
-              	'teacher_user' => $username,
-              	'teacher_pwd' => $password,
-              	'teacher_preName' => $pername,
-              	'teacher_name' => $name,
-              	'teacher_number' => $number,
-              	'teacher_link' => $link,
-              	'teacher_pict' => $file,
-              	);
-              echo "<hr/>";
-              $this->model_main->create_teacher($data);
+		$data = array(
+			'teacher_id' => "",
+			'teacher_user' => $username,
+			'teacher_pwd' => $password,
+			'teacher_preName' => $pername,
+			'teacher_name' => $name,
+			'teacher_number' => $number,
+			'teacher_link' => $link,
+			'teacher_pict' => $file,
+			);
+		echo "<hr/>";
+		$this->model_main->create_teacher($data);
 		//redirect('cs_udru','refresh');
-            }
-          }
-          ?>
+	}
+}
+?>

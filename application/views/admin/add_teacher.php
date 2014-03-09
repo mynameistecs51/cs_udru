@@ -30,9 +30,9 @@
 			</div>
 			<div class="form-group">									
 				<div class="col-sm-10">
-					<?php $error;?>
+					<?php  $error; ?>
 					<label for="inputFile" class="col-sm-2  control-label" >รูปภาพ:</label>
-					<input type="file" class="input-sm col-sm-4" id="inputFile" name="inputFile">
+					<input type="file" class="input-sm col-sm-4"  id="inputFile"  name="inputFile">
 				</div>
 			</div>
 			<div class="form-group"  style="float:right; padding-right:18px;">
