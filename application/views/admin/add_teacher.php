@@ -33,7 +33,7 @@
 				<div class="col-sm-10">
 					<?php // $error; ?>
 					<label for="userfile" class="col-sm-2  control-label" >รูปภาพ:</label>
-					<input type="file" name="userfile" class="input-sm col-sm-3" size="20" />
+					<input type="file" name="userfile"  id="userfile" class="input-sm col-sm-3" size="20" />
 				</div>
 			</div>
 			<div class="form-group"  style="float:right; padding-right:18px;">
