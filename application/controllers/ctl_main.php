@@ -38,33 +38,31 @@ class Ctl_main extends CI_Controller {
 		$name = $this->input->post('inputName');
 		$number = $this->input->post('inputNumber');
 		$link = $this->input->post('inputURL');
-		$file = $this->input->post('inputFile');
+		//$file = $this->input->post('inputFile');
 
 		//  upload file picture teacher
 		$config['upload_path'] = './image/pict_teacher/';
-		$config['file_name'] = $this->input->post('inputFile');
 		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']    = '100';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
-		$rand = rand(1111,9999);
-		$date= date("Y-m-d ");
-		//$config['file_name']  = $date.$rand;
+		$config['max_size']	= '6144';
+		//$config['max_width']  = '1024';
+		//$config['max_height']  = '768';
+
 		$this->load->library('upload', $config);
-		$this->upload->initialize($config);
-
-		if (!$this->upload->do_upload($file)) {
-
-		echo 	$error =  $this->upload->display_errors();
-			$this->load->view('admin/add_teacher');
+		if ( ! $this->upload->do_upload())
+		{
+			$error = array('error' => $this->upload->display_errors());
 			foreach ($this->upload->data() as $key => $value) {
 				# code...
-				echo $key ." =  ".$value."<br/>";
+				echo $key ."=".$value."<br/>";
 			}
-			echo "11";
-		}else{
+			echo "<hr>".$this->upload->display_errors();
+			echo "error1";
+			$this->load->view('admin/add_teacher', $error);
+		}
+		else
+		{
 			$data = array('upload_data' => $this->upload->data());
-			echo "22";
+
 			$this->load->view('admin/add_teacher', $data);
 		}
 		// end upload file
@@ -77,7 +75,7 @@ class Ctl_main extends CI_Controller {
 			'teacher_name' => $name,
 			'teacher_number' => $number,
 			'teacher_link' => $link,
-			'teacher_pict' => $file,
+			//'teacher_pict' => $file,
 			);
 		echo "<hr/>";
 		$this->model_main->create_teacher($data);

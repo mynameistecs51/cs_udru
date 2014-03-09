@@ -3,7 +3,7 @@
 	<div class="panel panel-primary" >
 		<div class="panel-heading"><b class="glyphicon glyphicon-user"></b> เพิ่มข้อมูลอาจารย์</div>
 		<div class="panel-body alert-info" style="padding:10px;">			
-			<?php echo form_open_multipart('ctl_main/add_teacher_db','class="form-horizontal" role="form" style="padding:10px;"');?>
+			<?php echo form_open_multipart('ctl_main/add_teacher_db','class="form-horizontal" role="form" style="padding:10px;" ');?>
 			<div class="form-group">									
 				<div class="col-sm-10">
 					<label for="inputUser" class="col-sm-3 control-label">user:</label>
@@ -32,15 +32,17 @@
 				<div class="col-sm-10">
 					<?php  $error; ?>
 					<label for="inputFile" class="col-sm-2  control-label" >รูปภาพ:</label>
-					<input type="file" class="input-sm col-sm-4"  id="inputFile"  name="inputFile">
+					<input type="file" name="inputFile" class="input-sm col-sm-3" size="20" />
+
 				</div>
 			</div>
 			<div class="form-group"  style="float:right; padding-right:18px;">
 				<button type="reset" class="btn btn-primary">ยกเลิก</button>
 				<button type="submit" class="btn btn-primary">บันทึก</button>
 			</div>
-			<?php echo form_close();?>
-		</div>
+		</form>
 	</div>
 </div>
+
+
 <?php $this->load->view("footer");?>
