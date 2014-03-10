@@ -10,7 +10,7 @@ class Ctl_main extends CI_Controller {
 	public function index(){
 		$data['title'] = "cs_udru";
 		$data['teacher'] = $this->model_main->get_teacher();
-		
+
 		$this->load->view("cs_udru",$data);
 	}
 
@@ -39,7 +39,7 @@ class Ctl_main extends CI_Controller {
 
 		//  upload file picture teacher
 		$config['upload_path'] = './image/pict_teacher/';
-		$config['file_name'] = $this->input->post('inputName');
+		$config['file_name'] = md5(iconv('UTF-8','windows-874',$this->input->post('inputName')));
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '6144';
 		//$config['max_width']  = '1024';

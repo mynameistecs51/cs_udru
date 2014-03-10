@@ -6,10 +6,10 @@
       <?php 
       foreach ($teacher as $key=> $value) { 
         if($value->teacher_number == '1'){
-          echo anchor('http://www.google.com','<div class="panel-body" >
-            <img src=" '.base_url().'image/pict_teacher/'.$value->teacher_name.'.jpg"  class="img-rounded" style="width:100px; hight:70px; padding:1px;">    
+          echo anchor($value->teacher_link,'<div class="panel-body" >
+            <img src=" '.base_url().'image/pict_teacher/'.md5($value->teacher_name).'.jpg"  class="img-rounded" style="width:100px; hight:70px; padding:1px;">    
           </div>
-          <div class="panel-footer" align="center">'.$value->teacher_preName.' '.$value->teacher_name.'<br/>ประธานสาขาวิชา'.'</div>');
+          <div class="panel-footer" align="center">'.$value->teacher_preName.' '.md5($value->teacher_name).'<br/>ประธานสาขาวิชา'.'</div>');
         }
         ?>    
 
