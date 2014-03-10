@@ -9,6 +9,8 @@ class Ctl_main extends CI_Controller {
  	//index page
 	public function index(){
 		$data['title'] = "cs_udru";
+		$data['teacher'] = $this->model_main->get_teacher();
+		
 		$this->load->view("cs_udru",$data);
 	}
 
@@ -62,9 +64,11 @@ class Ctl_main extends CI_Controller {
 			//$this->load->view('page_teacher', $data);
 			redirect('ctl_main/page_teacher/',$data);
 		}
-		// end upload file
-		//--------------------------------------//
-		
+		// end upload file		
+	}
+
+	public function redirect(){
+		redirect('www.google.com');
 	}
 }
 ?>

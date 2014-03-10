@@ -27,6 +27,7 @@ class Model_main extends CI_model {
 		return true;
 	}
 
+/////เรียกดูข้อมูลอาจารย์
 	public function get_teacher(){
 		$query = $this->db->get('teacher');
 		return $query->result();
