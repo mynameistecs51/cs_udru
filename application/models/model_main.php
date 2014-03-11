@@ -8,7 +8,7 @@ class Model_main extends CI_model {
 		$username = $this->input->post('inputUser');
 		$password = $this->input->post('inputPassword');
 		$pername = $this->input->post('inputPername');
-		$name = $this->input->post('inputName');
+		$name = md5($this->input->post('inputName'));
 		$number = $this->input->post('inputNumber');
 		$link = $this->input->post('inputURL');
 		//$file = $this->input->post('userfile');
