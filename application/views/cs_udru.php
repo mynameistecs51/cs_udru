@@ -8,7 +8,7 @@
 				foreach ($teacher as $key => $value) {
 					if($value->teacher_number == '1'){
 						echo anchor($value->teacher_link,'<div class="panel-body" >
-							<img src=" '.base_url().'image/pict_teacher/'.$value->teacher_pict.'.jpg"  class="img-rounded" style="width:200px; hight:140px;">    
+							<img src=" '.base_url().'image/pict_teacher/'.$value->teacher_pict.'.jpg"  class="img-rounded" style="width:300px; hight:140px;">    
 						</div>
 						<div class="panel-footer" align="center">'.$value->teacher_preName.' '.$value->teacher_name.'<br/>ประธานสาขาวิชา'.'</div>');
 					}
