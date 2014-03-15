@@ -39,9 +39,10 @@ class Ctl_main extends CI_Controller {
 
 		//  upload file picture teacher
 		$config['upload_path'] = './image/pict_teacher/';
-		$config['file_name'] = md5($this->input->post('inputName'));
+		$config['file_name'] = $this->input->post('inputName');
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '6144';
+		$config['encrypt_name'] = TRUE;
 		//$config['max_width']  = '1024';
 		//$config['max_height']  = '768';
 
