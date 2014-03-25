@@ -5,14 +5,39 @@ class Model_main extends CI_model {
 		parent::__construct();
 	}
 	public function create_teacher(){
+		///
+		$config['upload_path'] = './image/pict_teacher/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '6144';
+		//$config['encrypt_name'] = TRUE;
+		$rand = rand(1111,9999);
+		$date= date("Y-m-d");
+		$config['file_name']  = $date.$rand;
+		//$config['max_width']  = '1024';
+		//$config['max_height']  = '768';
+
+		$this->load->library('upload', $config);
+		if ( ! $this->upload->do_upload()){
+			$error = array('error' => $this->upload->display_errors());
+			echo "<hr>".$this->upload->display_errors();
+			echo "error1";
+			$this->load->view('admin/add_teacher', $error);
+		}else{
+			$data = array('upload_data' => $this->upload->data());
+			//$this->model_main->create_teacher();  //create data file for database
+			//$this->load->view('page_teacher', $data);
+			// redirect('ctl_main/page_teacher/',$data);
+		}
+		//////////////////
 		$username = $this->input->post('inputUser');
 		$password = $this->input->post('inputPassword');
 		$pername = $this->input->post('inputPername');
-		$name = md5($this->input->post('inputName'));
+		$name = $this->input->post('inputName');
 		$number = $this->input->post('inputNumber');
 		$link = $this->input->post('inputURL');
 		//$file = $this->input->post('userfile');
 
+		///
 		$insert = array(
 			'teacher_id' => "",
 			'teacher_user' => $username,
@@ -21,7 +46,7 @@ class Model_main extends CI_model {
 			'teacher_name' => $name,
 			'teacher_number' => $number,
 			'teacher_link' => $link,
-			'teacher_pict' => $name,
+			'teacher_pict' => $config['file_name'],
 			);
 		$query =  $this->db->insert('teacher',$insert);
 		return true;

@@ -36,35 +36,11 @@ class Ctl_main extends CI_Controller {
 	//add teacher db
 	public function add_teacher_db(){		
 		//input text fild//
-
+		$this->model_main->create_teacher();  //create data file for database
+		redirect('ctl_main/page_teacher/',$data);
 		//  upload file picture teacher
-		$config['upload_path'] = './image/pict_teacher/';
-		$config['file_name'] = $this->input->post('inputName');
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= '6144';
-		$config['encrypt_name'] = TRUE;
-		//$config['max_width']  = '1024';
-		//$config['max_height']  = '768';
+		
 
-		$this->load->library('upload', $config);
-		if ( ! $this->upload->do_upload())
-		{
-			$error = array('error' => $this->upload->display_errors());
-			foreach ($this->upload->data() as $key => $value) {
-				# code...
-				echo $key ."=".$value."<br/>";
-			}
-			echo "<hr>".$this->upload->display_errors();
-			echo "error1";
-			$this->load->view('admin/add_teacher', $error);
-		}
-		else
-		{
-			$data = array('upload_data' => $this->upload->data());
-			$this->model_main->create_teacher();  //create data file for database
-			//$this->load->view('page_teacher', $data);
-			redirect('ctl_main/page_teacher/',$data);
-		}
 		// end upload file		
 	}
 
