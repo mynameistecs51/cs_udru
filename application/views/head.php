@@ -29,7 +29,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li ><?php echo anchor('ctl_main/index','หน้าหลัก');?></li>
 					<li><?php echo anchor('#',"ภาพกิจกรรม");?></li>
-					<li><?php echo anchor('#','ข่าวสาร');?></li>
+					<li><?php echo anchor('ctl_main/add_news','ข่าวสาร');?></li>
 					<li><?php echo anchor('ctl_main/page_teacher','บุคลากร/อาจารย์');?></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->

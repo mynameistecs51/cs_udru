@@ -57,5 +57,24 @@ class Model_main extends CI_model {
 		$query = $this->db->get('teacher');
 		return $query->result();
 	}
+
+	//////add news db
+	public function create_news(){
+		$news = array(
+			'news_id' => " ",
+			'news_head' => $this->input->post('input_headNews'),
+			'news_container' => $this->input->post('input_contain_news'),
+			'news_datePost' => 'NOW()',
+			'news_peoplePost' => "chaiwat",
+		);
+		$query =  $this->db->insert('teacher_news',$news);
+		return true;
+	}
+
+	//get news
+	public function get_news(){
+		$query = $this->db->get('teacher_news');
+		return $query->result();
+	}
 }
 ?>

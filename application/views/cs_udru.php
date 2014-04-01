@@ -20,15 +20,21 @@
 </div>
 <div class="row col-md-8" style="padding-left:3px;">
 	<div class="panel panel-primary " >
-		<div class="panel-heading"><b class="glyphicon glyphicon-info-sign"></b> 
-			สารสนเทศสาขาวิชา
-		</div>
-		<div class="panel-body alert-info" style="padding:10px; word-wrap:break-word;" >
-			xxxxxxxxxx
-		</div>				
+
+		<?php 
+		foreach ($teacher_news as $key_news => $value_news) {
+			echo  '<div class="panel-heading"><b class="glyphicon glyphicon-info-sign"></b>  '.$value_news ->news_head.'</div>';
+			echo '<div class="panel-body alert-info" style="padding:10px; word-wrap:break-word;" >';
+			echo $value_news ->news_container;
+			echo '<br/><span class="label label-warning" style="float:right;">'.$value_news->news_peoplePost.'</span> ';
+			//echo "<br/>";
+			echo '<br/><span class="label label-warning" style="float:right;">โพสเมื่อ '.$value_news->news_datePost.'</span> ';
+			echo "</div>";
+		}
+		?>		
 	</div>
 	<!-- //////// infomation /// -->
-	<div class="panel panel-primary" style="paddint-top:10px;" >
+	<!-- <div class="panel panel-primary" style="paddint-top:10px;" >
 		<div class="panel-heading"><b class="glyphicon glyphicon-info-sign"></b> 
 			ข่าวสาร
 		</div>
@@ -47,7 +53,7 @@
 			<br/><span class="label label-warning" style="float:right;">ผู้โพส</span> 
 		</div>				
 	</div>
-
-	<!-- /// end infomation /// -->
+-->
+<!-- /// end infomation /// -->
 </div>
 <?php $this->load->view("footer");?>

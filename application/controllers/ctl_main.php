@@ -9,7 +9,11 @@ class Ctl_main extends CI_Controller {
  	//index page
 	public function index(){
 		$data['title'] = "cs_udru";
-		$data['teacher'] = $this->model_main->get_teacher();
+		//$data['teacher'] = $this->model_main->get_teacher();
+		$data =array(
+			'teacher' => $this->model_main->get_teacher(),
+			'teacher_news' => $this->model_main->get_news(),
+		);
 
 		$this->load->view("cs_udru",$data);
 	}
@@ -44,8 +48,16 @@ class Ctl_main extends CI_Controller {
 		// end upload file		
 	}
 
-	public function redirect(){
-		redirect('www.google.com');
+	//add news
+	public function add_news(){
+		$data['title'] = "เพิ่มข่าว";
+		$this->load->view('admin/add_news',$data);
+	}
+
+	//add news db
+	public function add_news_db(){
+		$this->model_main->create_news();
+		redirect('ctl_main/index');
 	}
 }
 ?>
