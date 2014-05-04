@@ -60,12 +60,13 @@ class Model_main extends CI_model {
 
 	//////add news db
 	public function create_news(){
+		
 		$news = array(
 			'news_id' => " ",
 			'news_head' => $this->input->post('input_headNews'),
 			'news_container' => $this->input->post('input_contain_news'),
-			'news_datePost' => 'NOW()',
 			'news_peoplePost' => "chaiwat",
+			'news_datePost' => date("Y-m-d H:i:s"),
 		);
 		$query =  $this->db->insert('teacher_news',$news);
 		return true;
@@ -73,7 +74,11 @@ class Model_main extends CI_model {
 
 	//get news
 	public function get_news(){
-		$query = $this->db->get('teacher_news');
+		$sql = "select * from teacher_news order by news_id desc";
+		// $query = $this->db->get('teacher_news');
+		// $query = $this->db->order_by('news_id', 'asc');
+		$query = $this->db->query($sql);
+
 		return $query->result();
 	}
 }

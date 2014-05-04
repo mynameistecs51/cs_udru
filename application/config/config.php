@@ -1,5 +1,5 @@
 ﻿<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+date_default_timezone_set('Asia/Bangkok');
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -202,6 +202,7 @@ $config['log_path'] = '';
 | codes to set your own date formatting
 |
 */
+
 $config['log_date_format'] = 'Y-m-d H:i:s';
 
 /*
