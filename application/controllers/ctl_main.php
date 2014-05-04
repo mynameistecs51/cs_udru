@@ -8,9 +8,10 @@ class Ctl_main extends CI_Controller {
 
  	//index page
 	public function index(){
-		$data['title'] = "cs_udru";
+		//$data['title'] = "cs_udru";
 		//$data['teacher'] = $this->model_main->get_teacher();
 		$data =array(
+			'title' => "CS_UDRU",
 			'teacher' => $this->model_main->get_teacher(),
 			'teacher_news' => $this->model_main->get_news(),
 		);
