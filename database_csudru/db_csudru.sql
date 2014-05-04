@@ -36,14 +36,14 @@ CREATE TABLE IF NOT EXISTS `teacher` (
   `teacher_link` char(255) NOT NULL,
   `teacher_pict` char(100) NOT NULL,
   PRIMARY KEY (`teacher_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
 --
 -- dump ตาราง `teacher`
 --
 
 INSERT INTO `teacher` (`teacher_id`, `teacher_user`, `teacher_pwd`, `teacher_preName`, `teacher_name`, `teacher_number`, `teacher_link`, `teacher_pict`) VALUES
-(44, 'admin', '1234', 'นาย', 'ไชยวัฒน์ หอมแสง', 1, 'http://localhost/cs_udru/index.php/ctl_main/add_teacher', '2014-04-016152');
+(46, 'aa', 'aa', 'aa', 'aa', 1, 'http://localhost/cs_udru/index.php/ctl_main/add_teacher', '2014-05-048774');
 
 -- --------------------------------------------------------
 
@@ -58,17 +58,14 @@ CREATE TABLE IF NOT EXISTS `teacher_news` (
   `news_datePost` datetime NOT NULL,
   `news_peoplePost` varchar(50) NOT NULL,
   PRIMARY KEY (`news_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 --
 -- dump ตาราง `teacher_news`
 --
 
 INSERT INTO `teacher_news` (`news_id`, `news_head`, `news_container`, `news_datePost`, `news_peoplePost`) VALUES
-(2, 'test', 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', '2014-04-01 17:18:26', 'te'),
-(3, 'test2', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', '0000-00-00 00:00:00', 'chaiwat'),
-(4, 'test3', 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv', '0000-00-00 00:00:00', 'chaiwat'),
-(5, 'test 4', 'ddddddddddddddddxxxxxxxxxxxxxxxxxxxxxxxxxx', '0000-00-00 00:00:00', 'chaiwat');
+(30, '555', '555', '2014-05-04 15:01:26', 'chaiwat');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
