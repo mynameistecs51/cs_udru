@@ -19,6 +19,8 @@ class Ctl_main extends CI_Controller {
 		$this->load->view("cs_udru",$data);
 	}
 
+
+
 	public function page_teacher(){
 		$data["title"] = "อาจารย์ประจำสาขาวิชา";
 		$data['teacher'] = $this->model_main->get_teacher();
@@ -60,5 +62,7 @@ class Ctl_main extends CI_Controller {
 		$this->model_main->create_news();
 		redirect('ctl_main/index');
 	}
+
+	
 }
 ?>

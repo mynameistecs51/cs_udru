@@ -14,7 +14,12 @@
 	<!-- Add custom CSS here -->
 	<link href="<?php echo base_url().'css/small-business.css';?>" rel="stylesheet">
 
+ <!-- JavaScript -->
+    <script src="<?php echo base_url().'js/jquery-1.10.2.js';?>"></script>
+    <script src="<?php echo base_url().'js/bootstrap.js';?>"></script>
+    <script src="<?php echo base_url().'js.bootstrap.min.js';?>"></script>
 </head>
+
 
 <body>
 
@@ -31,6 +36,7 @@
 					<li><?php echo anchor('#',"ภาพกิจกรรม");?></li>
 					<li><?php echo anchor('ctl_main/add_news','ข่าวสาร');?></li>
 					<li><?php echo anchor('ctl_main/page_teacher','บุคลากร/อาจารย์');?></li>
+					<li><span class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">เข้าสู่ระบบ</span></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container -->

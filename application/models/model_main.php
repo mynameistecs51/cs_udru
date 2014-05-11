@@ -4,7 +4,23 @@ class Model_main extends CI_model {
 	public function __construct(){
 		parent::__construct();
 	}
-	public function create_teacher(){
+
+	public function login($username,$password){	//////////// check login /////////////
+		$this->db->select('teacher_id','teacher_user','teacher_pwd');
+		$this->db->form('teacher');
+		$this->db->where('teacher_user',$username);
+		$this->db->where('teacher_pwd',$password);
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+		if($query ->number() == 1){
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
+
+	public function create_teacher(){    ////////create teacher //////////
 		///
 		$config['upload_path'] = './image/pict_teacher/';
 		$config['allowed_types'] = 'gif|jpg|png';
@@ -67,7 +83,7 @@ class Model_main extends CI_model {
 			'news_container' => $this->input->post('input_contain_news'),
 			'news_peoplePost' => "chaiwat",
 			'news_datePost' => date("Y-m-d H:i:s"),
-		);
+			);
 		$query =  $this->db->insert('teacher_news',$news);
 		return true;
 	}
