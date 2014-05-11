@@ -5,20 +5,6 @@ class Model_main extends CI_model {
 		parent::__construct();
 	}
 
-	public function login($username,$password){	//////////// check login /////////////
-		$this->db->select('teacher_id','teacher_user','teacher_pwd');
-		$this->db->form('teacher');
-		$this->db->where('teacher_user',$username);
-		$this->db->where('teacher_pwd',$password);
-		$this->db->limit(1);
-
-		$query = $this->db->get();
-		if($query ->number() == 1){
-			return $query->result();
-		}else{
-			return false;
-		}
-	}
 
 	public function create_teacher(){    ////////create teacher //////////
 		///
