@@ -14,12 +14,14 @@ class Ctl_main extends CI_Controller {
 			'title' => "CS_UDRU",
 			'teacher' => $this->model_main->get_teacher(),
 			'teacher_news' => $this->model_main->get_news(),
-		);
+			);
 
 		$this->load->view("cs_udru",$data);
 	}
 
-
+	public function login(){
+		$this->load->view('login_form');
+	}
 
 	public function page_teacher(){
 		$data["title"] = "อาจารย์ประจำสาขาวิชา";

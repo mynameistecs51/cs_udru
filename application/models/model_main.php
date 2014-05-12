@@ -6,6 +6,23 @@ class Model_main extends CI_model {
 	}
 
 
+
+	public function login($username,$password){
+		$this->db->select('teacher_id','teacher_user','teacher_pwd');
+		$this->db->from('teacher');
+		$this->db->where('teacher_user',$username);
+		$this->db->where('teacher_pwd',$password);
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+
+		if($query->num_rows() == 1){
+			return $query->result();
+		}else{
+			return fasle;
+		}
+	}
+	
 	public function create_teacher(){    ////////create teacher //////////
 		///
 		$config['upload_path'] = './image/pict_teacher/';
