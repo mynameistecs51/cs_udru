@@ -8,14 +8,14 @@ class Model_main extends CI_model {
 
 
 	public function login($username,$password){
-		// $this->db->select('teacher_id','teacher_user','teacher_pwd');
-		// $this->db->from('teacher');
-		// $this->db->where('teacher_user',$username);
-		// $this->db->where('teacher_pwd',$password);
-		// $this->db->limit(1);
 
-		//$query = $this->db->get('teacher');
-		echo $query = "select teacher_id,teacher_user,teacher_pwd from teacher where".$username."and".$password."limit 1";
+		$this->db->select('teacher_id,teacher_user,teacher_pwd');
+		$this->db->from('teacher');
+		$this->db->where('teacher_user', $username);
+		$this->db->where('teacher_pwd', $password);
+		$this->db->limit(1);
+
+		$query = $this->db->get();
 
 		if($query->num_rows() == 1){
 			return $query->result();

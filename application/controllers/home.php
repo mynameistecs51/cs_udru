@@ -9,13 +9,17 @@ class Home extends CI_Controller{
 	function index(){		
 		if($this->session->userdata('logged_in')){
 			$session_data = $this->session->userdata('logged_in');
-				$data['username'] = $session_data['id']; // เมื่อสำเร็จแล้วให้เปลี่ยน title เป็น username
-				// $this->load->view('home_view',$data);
+				//$data['username'] = $session_data['username']; // เมื่อสำเร็จแล้วให้เปลี่ยน title เป็น username
+				$data = array(
+					'username' => $session_data['username'],
+					'password' => $session_data['password'],
+					);
+				$this->load->view('home_view',$data);
 				// echo $data['title'];
 				// echo "<br/>";
-				echo var_dump($this->session->userdata('logged_in'));
-				echo "<br/>";
-				echo "<a href='home/logout'>Logout</a>";
+				// echo var_dump($this->session->userdata('logged_in'));
+				// echo "<br/>";
+				// echo "<a href='home/logout'>Logout</a>";
 			}else{
 				// if no session redirect to login page
 				redirect('ctl_main/login','refresh');
