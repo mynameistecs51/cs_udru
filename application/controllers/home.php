@@ -15,11 +15,6 @@ class Home extends CI_Controller{
 					'password' => $session_data['password'],
 					);
 				$this->load->view('home_view',$data);
-				// echo $data['title'];
-				// echo "<br/>";
-				// echo var_dump($this->session->userdata('logged_in'));
-				// echo "<br/>";
-				// echo "<a href='home/logout'>Logout</a>";
 			}else{
 				// if no session redirect to login page
 				redirect('ctl_main/login','refresh');
