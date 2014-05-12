@@ -24,16 +24,18 @@ class Verifylogin extends CI_Controller{
 	function check_database($password){
 			//fild validation succeed
 		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 
 		//query database
 		$result = $this->model_main->login($username,$password);
 
 		if($result){
 			$sess_array = array();
-			foreach ($result as $row) {
+			foreach ($result as $row => $key) {
 				$sess_array = array(
-					'id' => $row->teacher_id,
-					'username' => $row->teacher_number
+					'id' => $key->teacher_id,
+					'username' => $key->teacher_user,
+					'password' => $key->teacher_pwd,
 					);
 				$this->session->set_userdata('logged_in',$sess_array);
 			}
