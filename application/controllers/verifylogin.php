@@ -33,8 +33,8 @@ class Verifylogin extends CI_Controller{
 			foreach ($result as $row => $key) {
 				$sess_array = array(
 					'id' => $key->teacher_id,
-					'username' => $key->teacher_user,
-					'password' => $key->teacher_pwd,
+					'teacher_user' => $key->teacher_user,
+					'teacher_name' => $key->teacher_name,
 					);
 				$this->session->set_userdata('logged_in',$sess_array);
 			}

@@ -14,57 +14,71 @@ class Ctl_main extends CI_Controller {
 				'title' => "CS_UDRU",
 				'teacher' => $this->model_main->get_teacher(),
 				'teacher_news' => $this->model_main->get_news(),
-				'username' => "",
+				'name' => "",
 				);
 		}else{		/// เมื่อทำการ login ///////////
 			$session_data = $this->session->userdata('logged_in');
-				$data['username'] = $session_data['username']; // เมื่อสำเร็จแล้วให้เปลี่ยน title เป็น username
-				$data = array(	
-					'username' => $session_data['username'],
-					'title' => "CS_UDRU",
-					'teacher' => $this->model_main->get_teacher(),
-					'teacher_news' => $this->model_main->get_news(),
-					);
-			}
-			$this->load->view("cs_udru",$data);
+			$data = array(	
+				'username' => $session_data['teacher_user'],
+				'name' => $session_data['teacher_name'],
+				'title' => "CS_UDRU",
+				'teacher' => $this->model_main->get_teacher(),
+				'teacher_news' => $this->model_main->get_news(),
+				);
 		}
+		$this->load->view("cs_udru",$data);
+	}
 
 
-		public function login(){
-			if($this->session->userdata('logged_in')){
-				$session_data = $this->session->userdata('logged_in');
-				$data['username'] = $session_data['username']; // เมื่อสำเร็จแล้วให้เปลี่ยน title เป็น username
-				$data = array(	
-					'username' => $session_data['username'],
-					);
-				$this->load->view('cs_udru',$data);
-			}else{
-				// if no session redirect to login page
-				$this->load->view('login_form');
-			}	
-		}
+		// public function login(){
+		// 	if($this->session->userdata('logged_in')){
+		// 		$session_data = $this->session->userdata('logged_in');
+		// 		$data['username'] = $session_data['username']; // เมื่อสำเร็จแล้วให้เปลี่ยน title เป็น username
+		// 		$data = array(	
+		// 			'username' => $session_data['username'],
+		// 			);
+		// 		$this->load->view('cs_udru',$data);
+		// 	}else{
+		// 		// if no session redirect to login page
+		// 		$this->load->view('login_form');
+		// 	}	
+		// }
 
-		public function page_teacher(){
-			$data["title"] = "อาจารย์ประจำสาขาวิชา";
-			$data['teacher'] = $this->model_main->get_teacher();
+	public function page_teacher(){
+		$session_data = $this->session->userdata('logged_in');
+		$data  = array(
+			"title" => "อาจารย์ประจำสาขาวิชา",
+			'teacher' => $this->model_main->get_teacher(),
+			'name' => $session_data['teacher_name'],
+			);
 
-			$this->load->view("page_teacher",$data);
-		}
+		$this->load->view("page_teacher",$data);
+	}
 
 	///back door
-		public function admin(){
-			$data['title'] = "จัดการข้อมูล";
+	public function admin(){
+		if(!$this->session->userdata('logged_in')){
+			$this->load->view('login_form');
+		}else{
+			$session_data = $this->session->userdata('logged_in');
+			$data  = array('title' => "จัดการข้อมูล",'name' => $session_data['teacher_name'] );
 			$this->load->view("admin/admin",$data);
 		}
+	}
 
 	// page add teacher//
-		public function add_teacher(){
-			$data['title'] = "เพิ่มข้อมูลอาจารย์";
+	public function add_teacher(){
+		if(!$this->session->userdata('logged_in')){
+			$this->load->view('login_form');
+		}else{
+			$session_data = $this->session->userdata('logged_in');
+			$data  = array('title' => "เพิ่อาจารย์",'name' => $session_data['teacher_name'] );
 			$this->load->view("admin/add_teacher",$data);
 		}
+	}
 
 	//add teacher db
-		public function add_teacher_db(){		
+	public function add_teacher_db(){		
 		//input text fild//
 		$this->model_main->create_teacher();  //create data file for database
 		redirect('ctl_main/page_teacher/',$data);
@@ -76,8 +90,13 @@ class Ctl_main extends CI_Controller {
 
 	//add news
 	public function add_news(){
-		$data['title'] = "เพิ่มข่าว";
-		$this->load->view('admin/add_news',$data);
+		if(!$this->session->userdata('logged_in')){
+			$this->load->view('login_form');
+		}else{
+			$session_data = $this->session->userdata('logged_in');
+			$data  = array('title' => "เพิ่มข่าว",'name' => $session_data['teacher_name'] );
+			$this->load->view("admin/add_news",$data);
+		}
 	}
 
 	//add news db

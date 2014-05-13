@@ -9,7 +9,7 @@ class Model_main extends CI_model {
 
 	public function login($username,$password){
 
-		$this->db->select('teacher_id,teacher_user,teacher_pwd');
+		$this->db->select('teacher_id,teacher_user,teacher_pwd,teacher_name');
 		$this->db->from('teacher');
 		$this->db->where('teacher_user', $username);
 		$this->db->where('teacher_pwd', $password);
@@ -80,12 +80,12 @@ class Model_main extends CI_model {
 
 	//////add news db
 	public function create_news(){
-		
+		$session_data = $this->session->userdata('logged_in');
 		$news = array(
 			'news_id' => " ",
 			'news_head' => $this->input->post('input_headNews'),
 			'news_container' => $this->input->post('input_contain_news'),
-			'news_peoplePost' => "chaiwat",
+			'news_peoplePost' => $session_data['teacher_name'],
 			'news_datePost' => date("Y-m-d H:i:s"),
 			);
 		$query =  $this->db->insert('teacher_news',$news);

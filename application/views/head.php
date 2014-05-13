@@ -33,13 +33,21 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-					<?php echo anchor('home/logout','logout'," class='label label-primary'"); ?>
+						<?php echo anchor('home/logout','logout'," class='label label-primary'"); ?>
 					</li>
 					<li ><?php echo anchor('ctl_main/index','หน้าหลัก');?></li>
 					<li><?php echo anchor('#',"ภาพกิจกรรม");?></li>
 					<li><?php echo anchor('ctl_main/add_news','ข่าวสาร');?></li>
 					<li><?php echo anchor('ctl_main/page_teacher','บุคลากร/อาจารย์');?></li>
-					<li><span class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">เข้าสู่ระบบ</span></li>
+					<li>
+						<?php 
+						if(!$name ){
+							echo "<span class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
+						}else{
+							echo  anchor('home/logout',$name.'logout'," class='label label-primary'");
+						}
+						?>		
+					</li>			
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container -->

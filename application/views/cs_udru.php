@@ -25,7 +25,7 @@
 
 	foreach ($teacher_news as $key_news => $value_news) {
 		echo "<div class='panel panel-primary ' >";		
-			echo  '<div class="panel-heading"><b class="glyphicon glyphicon-info-sign"></b>  '.$value_news ->news_head."  -->".$username.'</div>'; ///////// ห้วข้อข่าว ///////////
+			echo  '<div class="panel-heading"><b class="glyphicon glyphicon-info-sign"></b>  '.$value_news ->news_head.'</div>'; ///////// ห้วข้อข่าว ///////////
 			echo '<div class="panel-body alert-info" style="padding:10px; word-wrap:break-word;" >';		
 			echo substr($value_news ->news_container,0,20)."...<span class='label label-info'>".anchor('ctl_main/index','อ่านต่อ')."</span>";  ///// เนื้อหาข่าว  ///////////
 			echo '<br/><span class="label label-warning" style="float:right;">'.$value_news->news_peoplePost.'</span> ';  //////คนโพสข่าว ////////// 
