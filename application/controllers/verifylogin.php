@@ -7,7 +7,6 @@ class Verifylogin extends CI_Controller{
 
 	function index(){
 			// load library form validation
-			//$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('username','Username','trim|required|xss_clean');
 		$this->form_validation->set_rules('password','Password','trim|required|xss_clean|callback_check_database');
@@ -17,7 +16,7 @@ class Verifylogin extends CI_Controller{
 			$this->load->view('login_form');
 		}else{
 				//login success
-			redirect('home','refresh');
+			redirect('home','refresh');			
 		}
 	}
 
