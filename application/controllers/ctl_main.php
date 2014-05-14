@@ -104,5 +104,13 @@ class Ctl_main extends CI_Controller {
 		$this->model_main->create_news();
 		redirect('ctl_main/index');
 	}
+
+	public function page_news('news_id=33'){		
+		$data = array(
+			'name' => "test",
+			'teacher_news' => $this->model_main->get_news_id($news_id)
+			);
+		$this->load->view('page_news',$data);
+	}
 }
 ?>

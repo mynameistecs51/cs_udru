@@ -101,5 +101,15 @@ class Model_main extends CI_model {
 
 		return $query->result();
 	}
+
+	public function get_news_id($news_id){
+		$this->db->select('*');
+		$this->db->from('teacher_news');
+		$this->db->where('news_id', $news_id);
+
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
 }
 ?>
