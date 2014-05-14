@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `teacher_news` (
   `news_datePost` datetime NOT NULL,
   `news_peoplePost` varchar(50) NOT NULL,
   PRIMARY KEY (`news_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- dump ตาราง `teacher_news`
@@ -70,7 +70,8 @@ CREATE TABLE IF NOT EXISTS `teacher_news` (
 INSERT INTO `teacher_news` (`news_id`, `news_head`, `news_container`, `news_datePost`, `news_peoplePost`) VALUES
 (30, '555', '555', '2014-05-04 15:01:26', 'chaiwat'),
 (31, '2222', '22222', '2014-05-04 18:29:33', 'chaiwat'),
-(32, 'test', 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt', '2014-05-04 18:43:22', 'chaiwat');
+(32, 'test', 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt', '2014-05-04 18:43:22', 'chaiwat'),
+(33, 'dd', 'dd', '2014-05-14 08:18:47', 'dd');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
