@@ -86,6 +86,7 @@ class Model_main extends CI_model {
 			'news_head' => $this->input->post('input_headNews'),
 			'news_container' => $this->input->post('input_contain_news'),
 			'news_peoplePost' => $session_data['teacher_name'],
+			'news_peoplePost_id' => $session_data['id'],
 			'news_datePost' => date("Y-m-d H:i:s"),
 			);
 		$query =  $this->db->insert('teacher_news',$news);

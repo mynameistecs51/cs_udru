@@ -105,10 +105,12 @@ class Ctl_main extends CI_Controller {
 		redirect('ctl_main/index');
 	}
 
-	public function page_news('news_id=33'){		
-		$data = array(
-			'name' => "test",
-			'teacher_news' => $this->model_main->get_news_id($news_id)
+	public function page_news($news_id){	
+	$session_data = $this->session->userdata('logged_in');
+		$data  = array(
+			"title" => "อ่านข่าว",
+			'teacher_news' => $this->model_main->get_news_id($news_id),
+			'name' => $session_data['teacher_name'],
 			);
 		$this->load->view('page_news',$data);
 	}
