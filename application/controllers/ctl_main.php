@@ -109,6 +109,7 @@ class Ctl_main extends CI_Controller {
 	$session_data = $this->session->userdata('logged_in');
 		$data  = array(
 			"title" => "อ่านข่าว",
+			'teacher' => $this->model_main->get_teacher(),
 			'teacher_news' => $this->model_main->get_news_id($news_id),
 			'name' => $session_data['teacher_name'],
 			);

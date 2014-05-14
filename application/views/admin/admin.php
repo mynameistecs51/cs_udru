@@ -15,7 +15,7 @@
 				</th>
 				<th>
 					<div class="panel panel-primary">
-						<?php echo anchor('ctl_main/add_teacher','<div class="panel-body" >
+						<?php echo anchor('ctl_main/add_news','<div class="panel-body" >
 							<img src=" '.base_url().'image/add_news.jpg"  style="width:200px; hight:150px; padding:10px;"> 
 						</div>
 						<div class="panel-footer" align="center">เพิ่มข่าว</div>
@@ -24,7 +24,7 @@
 				</th>
 				<th>
 					<div class="panel panel-primary">
-						<?php echo anchor('ctl_main/add_teacher','<div class="panel-body" >
+						<?php echo anchor('ctl_main/add_news','<div class="panel-body" >
 							<img src=" '.base_url().'image/add_news.jpg"  style="width:200px; hight:150px; padding:10px;"> 
 						</div>
 						<div class="panel-footer" align="center">เพิ่มภาพกิจกรรม</div>

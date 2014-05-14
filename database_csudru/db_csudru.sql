@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
 -- Generation Time: 
 -- Server version: 5.5.36
--- PHP Version: 5.4.25
+-- PHP Version: 5.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -43,10 +43,7 @@ CREATE TABLE IF NOT EXISTS `teacher` (
 --
 
 INSERT INTO `teacher` (`teacher_id`, `teacher_user`, `teacher_pwd`, `teacher_preName`, `teacher_name`, `teacher_number`, `teacher_link`, `teacher_pict`) VALUES
-(46, 'aa', 'aa', 'aa', 'aa', 1, 'http://localhost/cs_udru/index.php/ctl_main/add_teacher', '2014-05-048774'),
-(47, 'aa', 'aa', 'a', 'a', 2, '', '2014-05-047840'),
-(48, 'ฟห', 'ฟห', 'ฟห', 'ฟฟฟ', 3, '', '2014-05-041169'),
-(49, 'dd', 'dd', 'dd', 'dd', 3, '', '2014-05-041538');
+(49, 'dd', 'dd', 'dd', 'dd', 1, 'http://localhost/cs_udru/index.php/ctl_main/add_teacher', '2014-05-041538');
 
 -- --------------------------------------------------------
 
@@ -60,18 +57,17 @@ CREATE TABLE IF NOT EXISTS `teacher_news` (
   `news_container` text NOT NULL,
   `news_datePost` datetime NOT NULL,
   `news_peoplePost` varchar(50) NOT NULL,
+  `news_peoplePost_id` int(11) NOT NULL,
   PRIMARY KEY (`news_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- dump ตาราง `teacher_news`
 --
 
-INSERT INTO `teacher_news` (`news_id`, `news_head`, `news_container`, `news_datePost`, `news_peoplePost`) VALUES
-(30, '555', '555', '2014-05-04 15:01:26', 'chaiwat'),
-(31, '2222', '22222', '2014-05-04 18:29:33', 'chaiwat'),
-(32, 'test', 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt', '2014-05-04 18:43:22', 'chaiwat'),
-(33, 'dd', 'dd', '2014-05-14 08:18:47', 'dd');
+INSERT INTO `teacher_news` (`news_id`, `news_head`, `news_container`, `news_datePost`, `news_peoplePost`, `news_peoplePost_id`) VALUES
+(33, 'dd', 'dd', '2014-05-14 08:18:47', 'dd', 49),
+(34, 'sssssssssssssssss', 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2014-05-15 00:00:36', 'dd', 49);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
