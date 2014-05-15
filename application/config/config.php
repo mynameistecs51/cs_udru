@@ -14,7 +14,7 @@ date_default_timezone_set('Asia/Bangkok');
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/cs_udru/';
+$config['base_url']	= 'http://te.dn-soft.net/';
 
 /*
 |--------------------------------------------------------------------------
