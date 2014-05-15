@@ -47,7 +47,7 @@
 				<div class="modal-body">
 					<?php //echo validateion_error();?>
 					<!-- login form -->
-					<?php echo form_open('verifyLogin/index',' class="form-horizontal" role="form" ');?>
+					<?php echo form_open('verifylogin/index',' class="form-horizontal" role="form" ');?>
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 						<div class="col-sm-10">

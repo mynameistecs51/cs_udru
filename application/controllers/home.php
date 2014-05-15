@@ -1,5 +1,7 @@
-<?php if(! defined('BASEPATH')) exit('No direct script access allowed');
-session_start();
+<?php 
+ session_start();
+ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 
 class Home extends CI_Controller{
 	function __construct(){
@@ -19,16 +21,16 @@ class Home extends CI_Controller{
 			// 		);
 			// 	$this->load->view('cs_udru',$data);
 			redirect('ctl_main','refresh');
-			}else{
+		}else{
 				// if no session redirect to login page
-				redirect('ctl_main/login','refresh');
-			}
-		}
-
-		function logout(){
-			$this->session->unset_userdata('logged_in');
-			session_destroy();
-			redirect('ctl_main','refresh');
+			redirect('ctl_main/login','refresh');
 		}
 	}
-	?>
+
+	function logout(){
+		$this->session->unset_userdata('logged_in');
+		session_destroy();
+		redirect('ctl_main','refresh');
+	}
+}
+?>

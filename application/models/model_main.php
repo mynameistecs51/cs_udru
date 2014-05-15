@@ -95,11 +95,16 @@ class Model_main extends CI_model {
 
 	//get news
 	public function get_news(){
-		$sql = "select * from teacher_news order by news_id desc";
+		//$sql = "select * from teacher_news order by news_id desc";
 		// $query = $this->db->get('teacher_news');
 		// $query = $this->db->order_by('news_id', 'asc');
-		$query = $this->db->query($sql);
+		//$query = $this->db->query($sql);
 
+		$this->db->select('*');
+		$this->db->from('teacher_news');
+		$this->db->order_by("news_id", "desc"); 
+
+		$query = $this->db->get();
 		return $query->result();
 	}
 
