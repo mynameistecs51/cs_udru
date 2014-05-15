@@ -39,7 +39,7 @@
 					<li>
 						<?php 
 						if(!$name){
-							echo "<span class='btn btn-primary' data-toggle='modal' data-target='ctl_main/index/.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
+							echo "<span class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
 						}else{
 							echo  anchor('home/logout',$name.'logout'," class='label label-primary'");
 						}

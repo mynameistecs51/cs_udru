@@ -1,5 +1,5 @@
 ﻿<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-//date_default_timezone_set('Asia/Bangkok');
+date_default_timezone_set('Asia/Bangkok');
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://te.dn-soft.net/';
+$config['base_url']	= 'http://localhost/cs_udru/';
 
 /*
 |--------------------------------------------------------------------------

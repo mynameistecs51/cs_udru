@@ -1,4 +1,5 @@
 <?php 
+ob_start();
  session_start();
  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
