@@ -1,8 +1,6 @@
-<?php 
+<?php  
 ob_start();
- session_start();
- if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Home extends CI_Controller{
 	function __construct(){
