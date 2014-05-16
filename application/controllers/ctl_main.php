@@ -81,7 +81,7 @@ class Ctl_main extends CI_Controller {
 	public function add_teacher_db(){		
 		//input text fild//
 		$this->model_main->create_teacher();  //create data file for database
-		redirect('ctl_main/page_teacher/',$data);
+		redirect('ctl_main/page_teacher','refresh');	
 		//  upload file picture teacher
 		
 
@@ -102,7 +102,7 @@ class Ctl_main extends CI_Controller {
 	//add news db
 	public function add_news_db(){
 		$this->model_main->create_news();
-		redirect('ctl_main/index');
+		redirect('ctl_main/index','refresh');			
 	}
 
 	public function page_news($news_id){	
