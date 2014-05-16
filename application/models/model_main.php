@@ -39,8 +39,6 @@ class Model_main extends CI_model {
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload()){
 			$error = array('error' => $this->upload->display_errors());
-			echo "<hr>".$this->upload->display_errors();
-			echo "error1";
 			$this->load->view('admin/add_teacher', $error);
 		}else{
 			$data = array('upload_data' => $this->upload->data());
