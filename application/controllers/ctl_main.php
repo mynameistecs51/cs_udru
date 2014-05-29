@@ -10,7 +10,7 @@ class Ctl_main extends CI_Controller {
 	public function index(){
 			// เมื่อไม่มีการ login //////
 			$data =array(
-				'title' => "CS_UDRU",
+				'title' => "CS_UDRU_",
 				'teacher' => $this->model_main->get_teacher(),
 				'teacher_news' => $this->model_main->get_news(),
 				);
