@@ -13,7 +13,22 @@ class Ctl_main extends CI_Controller {
 				'title' => "CS_UDRU_",
 				'teacher' => $this->model_main->get_teacher(),
 				'teacher_news' => $this->model_main->get_news(),
+<<<<<<< HEAD
 				);
+=======
+				'name_login' => "",
+				);
+		}else{		/// เมื่อทำการ login ///////////
+			$session_data = $this->session->userdata('logged_in');
+			$data = array(	
+				'username' => $session_data['teacher_user'],
+				'name_login' => $session_data['teacher_name'],
+				'title' => "CS_UDRU",
+				'teacher' => $this->model_main->get_teacher(),
+				'teacher_news' => $this->model_main->get_news(),
+				);
+		}
+>>>>>>> dcaddd775919eddf6c622f9abc3a88c6de7e4fa5
 		$this->load->view("cs_udru",$data);
 	}
 
@@ -23,6 +38,10 @@ class Ctl_main extends CI_Controller {
 		$data  = array(
 			"title" => "อาจารย์ประจำสาขาวิชา",
 			'teacher' => $this->model_main->get_teacher(),
+<<<<<<< HEAD
+=======
+			'name_login' => $session_data['teacher_name'],
+>>>>>>> dcaddd775919eddf6c622f9abc3a88c6de7e4fa5
 			);
 
 		$this->load->view("page_teacher",$data);
@@ -72,7 +91,12 @@ class Ctl_main extends CI_Controller {
 		$data  = array(
 			"title" => "อ่านข่าว",
 			'teacher' => $this->model_main->get_teacher(),
+<<<<<<< HEAD
 			'teacher_news' => $this->model_main->get_news_id($news_id)
+=======
+			'teacher_news' => $this->model_main->get_news_id($news_id),
+			'name_login' => $session_data['teacher_name'],
+>>>>>>> dcaddd775919eddf6c622f9abc3a88c6de7e4fa5
 			);
 		$this->load->view('page_news',$data);
 	}

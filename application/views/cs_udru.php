@@ -5,7 +5,11 @@
 		<div class="panel-body alert-info" style="padding:10px;" align="center">
 			<div class="panel panel-primary " align="center">
 				<?php 
+<<<<<<< HEAD
 			
+=======
+				var_dump($this->session->userdata);
+>>>>>>> dcaddd775919eddf6c622f9abc3a88c6de7e4fa5
 				foreach ($teacher as $key => $value) {
 					if($value->teacher_number == '1'){
 						echo anchor($value->teacher_link,'<div class="panel-body" >
