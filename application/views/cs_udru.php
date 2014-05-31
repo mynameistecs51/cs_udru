@@ -4,7 +4,7 @@
 		<div class="panel-heading"><b class="glyphicon glyphicon-user"></b>  ประธานสาขาวิชา</div>
 		<div class="panel-body alert-info" style="padding:10px;" align="center">
 			<div class="panel panel-primary " align="center">
-				<?php 
+				<?php 		
 				foreach ($teacher as $key => $value) {
 					if($value->teacher_number == '1'){
 						echo anchor($value->teacher_link,'<div class="panel-body" >
@@ -46,7 +46,7 @@
 				<div class="modal-body">
 					<?php //echo validateion_error();?>
 					<!-- login form -->
-					<?php echo form_open('verifylogin/index',' class="form-horizontal" role="form" ');?>
+					<?php echo form_open('c_verifylogin',' class="form-horizontal" role="form" ');?>
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 						<div class="col-sm-10">

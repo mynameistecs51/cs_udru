@@ -38,11 +38,11 @@
 					<li><?php echo anchor('ctl_main/page_teacher','บุคลากร/อาจารย์');?></li>
 					<li>
 						<?php 
-						// if(!$name_login){
-						// 	echo "<span class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
-						// }else{
-						// 	echo  anchor('home/logout',$name_login.'logout'," class='label label-primary'");
-						// }
+						if(empty($username)){
+							echo "<span class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
+						}else{
+							echo  anchor('c_home/logout',$username.'logout'," class='label label-primary'");
+						}
 						?>		
 					</li>			
 				</ul>
