@@ -35,7 +35,7 @@
 	</div>
 
 	<!-- pop up login -->
-	
+	<!-- 
 	<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -46,7 +46,7 @@
 				<div class="modal-body">
 					<?php //echo validateion_error();?>
 					<!-- login form -->
-					<?php echo form_open('c_verifylogin',' class="form-horizontal" role="form" ');?>
+					<?php  /*echo form_open('c_verifylogin',' class="form-horizontal" role="form" ');?>
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 						<div class="col-sm-10">
@@ -79,4 +79,6 @@
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php $this->load->view("footer");?>
+-->*/
+//<?php
+ $this->load->view("footer");?>

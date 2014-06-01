@@ -3,48 +3,75 @@
 class Ctl_main extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		$this->load->model("model_main");
-	}
+		$this->load->model('model_main','',TRUE);
+		$this->load->model('m_login','',TRUE);	}
 
  	//index page
-	public function index(){
+		public function index(){
 			// เมื่อไม่มีการ login //////
-			$data =array(
-				'title' => "CS_UDRU_",
+			if($this->session->userdata('logged_in'))
+			{
+				$session_data = $this->session->userdata('logged_in');
+				$data = array(
+					'id' => $session_data['teacher_id'],
+					'username' => $session_data['teacher_name'],
+					'title' => "CS_UDRU",
+					'teacher' => $this->model_main->get_teacher(),
+					'teacher_news' => $this->model_main->get_news(),
+					);
+            //$this->load->view('admin/admin',$data);
+			} else {
+        //If no session, redirect to login page
+
+				$data =array(
+					'title' => "CS_UDRU",
+					'teacher' => $this->model_main->get_teacher(),
+					'teacher_news' => $this->model_main->get_news(),
+					);
+			}
+
+			$this->load->view("cs_udru",$data);
+		}
+
+
+		public function page_teacher(){
+
+			$data  = array(
+				"title" => "อาจารย์ประจำสาขาวิชา",
 				'teacher' => $this->model_main->get_teacher(),
-				'teacher_news' => $this->model_main->get_news(),
 				);
-		$this->load->view("cs_udru",$data);
-	}
 
-
-	public function page_teacher(){
-		
-		$data  = array(
-			"title" => "อาจารย์ประจำสาขาวิชา",
-			'teacher' => $this->model_main->get_teacher(),
-			);
-
-		$this->load->view("page_teacher",$data);
-	}
+			$this->load->view("page_teacher",$data);
+		}
 
 	///back door
-	public function admin(){
-		
-			$data  = array('title' => "จัดการข้อมูล" );
-			$this->load->view("admin/admin",$data);
-	}
+		public function admin(){
+			if($this->session->userdata('logged_in'))
+			{
+				$session_data = $this->session->userdata('logged_in');
+				$data = array(
+					'id' => $session_data['teacher_id'],
+					'username' => $session_data['teacher_name'],
+					'title' => "จัดการข้อมูล"
+				// 'teacher' => $this->model_main->get_teacher(),
+				// 'teacher_news' => $this->model_main->get_news(),
+					);
+				$this->load->view('admin/admin',$data);
+			} else {
+				redirect('c_login', 'refresh');
+			}
+		}
 
 	// page add teacher//
-	public function add_teacher(){
+		public function add_teacher(){
 
 			$data  = array('title' => "เพิ่อาจารย์");
 			$this->load->view("admin/add_teacher",$data);
-	
-	}
+
+		}
 
 	//add teacher db
-	public function add_teacher_db(){		
+		public function add_teacher_db(){		
 		//input text fild//
 		$this->model_main->create_teacher();  //create data file for database
 		redirect('ctl_main/page_teacher','refresh');	
@@ -57,8 +84,8 @@ class Ctl_main extends CI_Controller {
 	//add news
 	public function add_news(){
 		
-			$data  = array('title' => "เพิ่มข่าว");
-			$this->load->view("admin/add_news",$data);
+		$data  = array('title' => "เพิ่มข่าว");
+		$this->load->view("admin/add_news",$data);
 		
 	}
 

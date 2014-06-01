@@ -3,8 +3,6 @@ class C_home extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('m_login','',TRUE);
-        $this->load->helper('url');
-        $this->load->library(array('form_validation','session'));
     }
  
     function index() {
@@ -13,7 +11,8 @@ class C_home extends CI_Controller {
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['teacher_name'];
             $data['id'] = $session_data['teacher_id'];
-            $this->load->view('admin/admin', $data);
+            //$this->load->view('admin/admin', $data);
+            $this->load->view('admin/admin',$data);
         } else {
         //If no session, redirect to login page
             redirect('c_login', 'refresh');

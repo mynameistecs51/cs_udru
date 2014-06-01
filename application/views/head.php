@@ -39,7 +39,8 @@
 					<li>
 						<?php 
 						if(empty($username)){
-							echo "<span class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
+							//echo "<span class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
+							echo anchor('c_login','เข้าสู่ระบบ');
 						}else{
 							echo  anchor('c_home/logout',$username.'logout'," class='label label-primary'");
 						}
