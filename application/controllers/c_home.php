@@ -3,6 +3,7 @@ class C_home extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('m_login','',TRUE);
+        $this->load->library('session');
     }
  
     function index() {

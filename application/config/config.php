@@ -1,5 +1,5 @@
-﻿<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-date_default_timezone_set('Asia/Bangkok');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+	date_default_timezone_set('Asia/Bangkok');
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -14,7 +14,7 @@ date_default_timezone_set('Asia/Bangkok');
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/cs_udru/';
+$config['base_url']	= 'http://te.dn-soft.net/';
 
 /*
 |--------------------------------------------------------------------------
@@ -202,7 +202,6 @@ $config['log_path'] = '';
 | codes to set your own date formatting
 |
 */
-
 $config['log_date_format'] = 'Y-m-d H:i:s';
 
 /*
@@ -225,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'login_function';
+$config['encryption_key'] = 'session_login';
 
 /*
 |--------------------------------------------------------------------------
