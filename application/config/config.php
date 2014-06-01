@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://te.dn-soft.net/';
+$config['base_url']	= 'http://localhost/cs_udru/';
 
 /*
 |--------------------------------------------------------------------------
