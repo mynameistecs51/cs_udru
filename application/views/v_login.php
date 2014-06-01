@@ -8,7 +8,7 @@
                <h4 class="modal-title"><span class="glyphicon glyphicon-log-in">  กรุณาลงชื่อเข้าใข้ระบบ</span></h4>
             </div>
             <div class="modal-body">
-               <?php //echo validateion_error();?>
+               <?php echo validation_errors();?>
                <!-- login form -->
                <?php echo form_open('c_verifylogin',' class="form-horizontal" role="form" ');?>
                <div class="form-group">
