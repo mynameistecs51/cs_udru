@@ -60,10 +60,12 @@ class Ctl_main extends CI_Controller {
 				'id' => $session_data['teacher_id'],
 				'title' => "จัดการข้อมูล",
 				);
+			$this->load->view("admin/admin",$data);
 		}else{
-			$data  = array('title' => "จัดการข้อมูล" );
+			//$data  = array('title' => "จัดการข้อมูล" );
+			redirect('c_login','refresh');
 		}
-		$this->load->view("admin/admin",$data);
+		
 	}
 
 	// page add teacher//
@@ -106,17 +108,19 @@ class Ctl_main extends CI_Controller {
 				'id' => $session_data['teacher_id'],
 				'title' => "เพิ่มข่าว",
 				);
+			$this->load->view("admin/add_news",$data);
 		}else{
-			$data  = array('title' => "เพิ่มข่าว");
+			//$data  = array('title' => "เพิ่มข่าว");
+			redirect('c_login','refresh');		
 		}
-		$this->load->view("admin/add_news",$data);
+		
 		
 	}
 
 	//add news db
 	public function add_news_db(){
 		$this->model_main->create_news();
-		redirect('ctl_main/index','refresh');			
+		redirect('ctl_main/index','refresh');	 		
 	}
 
 	public function page_news($news_id){	
