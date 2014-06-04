@@ -143,5 +143,13 @@ class Ctl_main extends CI_Controller {
 		}
 			$this->load->view('page_news',$data);
 		}
+
+
+		/////////// ภาพกิจกกรม  ////////////
+		public function page_activity(){
+			//$data  = array('title' => "ภาพกิจกกรม" );
+			$this->load->view('page_activity');
+
+		}
 	}
 	?>

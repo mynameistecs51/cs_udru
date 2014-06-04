@@ -18,6 +18,8 @@
 	<script src="<?php echo base_url().'js/jquery-1.10.2.js';?>"></script>
 	<script src="<?php echo base_url().'js/bootstrap.js';?>"></script>
 	<script src="<?php echo base_url().'js/bootstrap.min.js';?>"></script>
+	<!-- ---------- -->
+	
 </head>
 
 
@@ -33,7 +35,7 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li ><?php echo anchor('ctl_main/index','หน้าหลัก');?></li>
-					<li><?php echo anchor('#',"ภาพกิจกรรม");?></li>
+					<li><?php echo anchor('ctl_main/page_activity',"ภาพกิจกรรม");?></li>
 					<li><?php echo anchor('ctl_main/add_news','ข่าวสาร');?></li>
 					<li><?php echo anchor('ctl_main/page_teacher','บุคลากร/อาจารย์');?></li>
 					<li>
