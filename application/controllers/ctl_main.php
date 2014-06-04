@@ -147,8 +147,8 @@ class Ctl_main extends CI_Controller {
 
 		/////////// ภาพกิจกกรม  ////////////
 		public function page_activity(){
-			//$data  = array('title' => "ภาพกิจกกรม" );
-			$this->load->view('page_activity');
+			$data  = array('title' => "ภาพกิจกกรม" );
+			$this->load->view('page_activity',$data);
 
 		}
 	}
