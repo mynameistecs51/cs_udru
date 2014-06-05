@@ -1,5 +1,5 @@
 
-* {
+* /*{
 margin : 0;
 padding : 0;
 }
@@ -17,7 +17,7 @@ background-color : #000;
 background-position : 50% 0;
 background-repeat : no-repeat;
 font-family : Tahoma, sans-serif;
-}
+}*/
 a:link, a:visited {
 color : #fff;
 text-decoration : none;
@@ -26,7 +26,7 @@ a img {
 border : 0;
 }
 div.wrap {
-width : 993px;
+width : 620px;
 margin : 0 auto;
 text-align : left;
 }
@@ -67,14 +67,14 @@ background : url(../image/pict_gallery/header-bg.png) no-repeat 50% 0;
 }
 div#header div#slide-holder {
 z-index : 40;
-width : 993px;
+width : 610px;
 height : 299px;
 position : absolute;
 }
 div#header div#slide-holder div#slide-runner {
 top : 9px;
 left : 9px;
-width : 973px;
+width : 605px;
 height : 278px;
 overflow : hidden;
 position : absolute;
@@ -87,7 +87,7 @@ position : absolute;
 div#header div#slide-holder div#slide-controls {
 left : 0;
 bottom : 228px;
-width : 973px;
+width : 605px;
 height : 46px;
 display : none;
 position : absolute;
@@ -95,7 +95,7 @@ background : url(../image/pict_gallery/slide-bg.png) 0 0;
 }
 div#header div#slide-holder div#slide-controls p.text {
 float : left;
-color : #fff;
+color : #eee;
 display : inline;
 font-size : 10px;
 line-height : 16px;

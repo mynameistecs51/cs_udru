@@ -1,4 +1,11 @@
 ﻿<?php $this->load->view("head");?>
+<!-- load script -->
+<link rel="stylesheet" href="<?php echo base_url().'css/style.css';?>" type="text/css" media="screen" />
+<script type="text/javascript">var _siteRoot='index.html',_root='index.html';</script>
+<script type="text/javascript" src="<?php echo base_url().'js/jquery.js';?>"></script>
+<script type="text/javascript" src="<?php echo base_url().'js/scripts.js';?>"></script>
+<!-- end load script -->
+
 <div class="row  col-md-4" style="margin-right:40px;">
 	<div class="panel panel-primary " >
 		<div class="panel-heading"><b class="glyphicon glyphicon-user"></b>  ประธานสาขาวิชา</div>
@@ -10,17 +17,55 @@
 						echo anchor($value->teacher_link,'<div class="panel-body" >
 							<img src=" '.base_url().'image/pict_teacher/'.$value->teacher_pict.'.jpg"  class="img-rounded" style="width:180px; hight:140px;">     
 						</div>
-						<div class="panel-footer" align="center">'.$value->teacher_preName.' '.$value->teacher_name.'<br/>ประธานสาขาวิชา'.'</div>');
+						<div class="panel-footer" align="center" style="font: normal small-caps bold 16px sans-serif, Arial; color:#0099FF" >'.$value->teacher_preName.' '.$value->teacher_name.'<br/>ประธานสาขาวิชา'.'</div>');
 					}
 				}
 				?>  
 			</div>
 		</div>
 	</div>
+	<!-- link ที่เกี่ยวข้อง -->
+	<div class="panel panel-primary " >
+		<div class="panel-heading"><b class="glyphicon glyphicon-tasks"></b>  ลิงค์ที่เกี่ยวข้อง</div>
+		<div class="panel-body alert-info" style="padding:10px;" align="left">
+			xxxxxxxxxxxxxx <br/>
+			yyyyyyyyyyyyy
+		</div>
+	</div>
+	<!-- end link info -->
 </div>
 
 <!-- //////////////  post news ///////////// -->
-<div class="row col-md-8" style="padding-left:3px;">		
+<div class="row col-md-8" style="padding-left:3px;">	
+	<!-- picture activity -->
+	<div class="panel panel-primary">
+	<div id="header">
+  <div class="wrap">
+   <div id="slide-holder">
+    <div id="slide-runner">
+      <a href=""><img id="slide-img-1" src="<?php echo base_url().'image/pict_gallery/nature-photo.png';?>" class="slide" alt="" /></a>
+      <a href=""><img id="slide-img-2" src="<?php echo base_url().'image/pict_gallery/nature-photo1.png';?>" class="slide" alt="" /></a>
+      <a href=""><img id="slide-img-3" src="<?php echo base_url().'image/pict_gallery/nature-photo2.png';?>" class="slide" alt="" /></a>
+      <a href=""><img id="slide-img-4" src="<?php echo base_url().'image/pict_gallery/nature-photo3.png';?>" class="slide" alt="" /></a>
+      <a href=""><img id="slide-img-5" src="<?php echo base_url().'image/pict_gallery/nature-photo4.png';?>" class="slide" alt="" /></a>
+      <a href=""><img id="slide-img-6" src="<?php echo base_url().'image/pict_gallery/nature-photo4.png';?>" class="slide" alt="" /></a>
+      <a href=""><img id="slide-img-7" src="<?php echo base_url().'image/pict_gallery/nature-photo6.png';?>" class="slide" alt="" /></a> 
+      <div id="slide-controls">
+       <p id="slide-client" class="text"><strong>post: </strong><span></span></p>
+       <p id="slide-desc" class="text"></p>
+       <p id="slide-nav"></p>
+     </div>
+   </div>
+ <!--content featured gallery here -->
+</div>
+<script type="text/javascript">
+
+  if(!window.slider) var slider={};slider.data=[{"id":"slide-img-1","client":"nature beauty","desc":"nature beauty photography"},{"id":"slide-img-2","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-3","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-4","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-5","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-6","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-7","client":"nature beauty","desc":"add your description here"}];
+</script>
+</div>
+</div><!--/header-->
+	</div>
+	<!-- end picture activity -->
 	<?php 
 	foreach ($teacher_news as $key_news => $value_news) {
 		echo "<div class='panel panel-primary ' >";		
@@ -29,7 +74,8 @@
 			echo substr($value_news ->news_container,0,20)."...<span class='label label-info'>".anchor('ctl_main/page_news/'.$value_news->news_id,'อ่านต่อ')."</span>";  ///// เนื้อหาข่าว  ///////////
 			echo '<br/><span class="label label-warning" style="float:right;">'.$value_news->news_peoplePost.'</span> ';  //////คนโพสข่าว ////////// 
 			echo '<br/><span class="label label-warning" style="float:right;">โพสเมื่อ '.$value_news->news_datePost.'</span> '; ////////  วัน เวลา ที่ โพส /////////
-			echo "</div>";	echo "</div>";	
+			echo "</div>";	
+			echo "</div>";	
 		}
 		?>
 	</div>
@@ -81,4 +127,4 @@
 </div><!-- /.modal -->
 -->*/
 //<?php
- $this->load->view("footer");?>
+$this->load->view("footer");?>
