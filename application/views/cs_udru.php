@@ -5,6 +5,7 @@
 		<div class="panel-body alert-info" style="padding:10px;" align="center">
 			<div class="panel panel-primary " align="center">
 				<?php 
+				var_dump($this->session->userdata);
 				foreach ($teacher as $key => $value) {
 					if($value->teacher_number == '1'){
 						echo anchor($value->teacher_link,'<div class="panel-body" >
@@ -22,7 +23,6 @@
 <!-- //////////////  post news ///////////// -->
 <div class="row col-md-8" style="padding-left:3px;">		
 	<?php 
-
 	foreach ($teacher_news as $key_news => $value_news) {
 		echo "<div class='panel panel-primary ' >";		
 			echo  '<div class="panel-heading"><b class="glyphicon glyphicon-info-sign"></b>  '.$value_news ->news_head.' '.$value_news->news_id.'</div>'; ///////// ห้วข้อข่าว ///////////

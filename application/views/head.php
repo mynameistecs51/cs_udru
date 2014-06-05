@@ -17,7 +17,7 @@
 	<!-- JavaScript -->
 	<script src="<?php echo base_url().'js/jquery-1.10.2.js';?>"></script>
 	<script src="<?php echo base_url().'js/bootstrap.js';?>"></script>
-	<script src="<?php echo base_url().'js.bootstrap.min.js';?>"></script>
+	<script src="<?php echo base_url().'js/bootstrap.min.js';?>"></script>
 </head>
 
 
@@ -38,11 +38,11 @@
 					<li><?php echo anchor('ctl_main/page_teacher','บุคลากร/อาจารย์');?></li>
 					<li>
 						<?php 
-						if(!$name){
-							echo "<span class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
-						}else{
-							echo  anchor('home/logout',$name.'logout'," class='label label-primary'");
-						}
+						// if(!$name_login){
+						// 	echo "<span class='btn btn-primary' data-toggle='modal' data-target='.bs-example-modal-sm'>เข้าสู่ระบบ</span>";
+						// }else{
+						// 	echo  anchor('home/logout',$name_login.'logout'," class='label label-primary'");
+						// }
 						?>		
 					</li>			
 				</ul>

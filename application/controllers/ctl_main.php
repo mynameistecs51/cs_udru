@@ -14,13 +14,13 @@ class Ctl_main extends CI_Controller {
 				'title' => "CS_UDRU",
 				'teacher' => $this->model_main->get_teacher(),
 				'teacher_news' => $this->model_main->get_news(),
-				'name' => "",
+				//'name_login' => "",
 				);
 		}else{		/// เมื่อทำการ login ///////////
 			$session_data = $this->session->userdata('logged_in');
 			$data = array(	
 				'username' => $session_data['teacher_user'],
-				'name' => $session_data['teacher_name'],
+				//'name_login' => $session_data['teacher_name'],
 				'title' => "CS_UDRU",
 				'teacher' => $this->model_main->get_teacher(),
 				'teacher_news' => $this->model_main->get_news(),
@@ -49,7 +49,7 @@ class Ctl_main extends CI_Controller {
 		$data  = array(
 			"title" => "อาจารย์ประจำสาขาวิชา",
 			'teacher' => $this->model_main->get_teacher(),
-			'name' => $session_data['teacher_name'],
+			//'name_login' => $session_data['teacher_name'],
 			);
 
 		$this->load->view("page_teacher",$data);
@@ -111,7 +111,7 @@ class Ctl_main extends CI_Controller {
 			"title" => "อ่านข่าว",
 			'teacher' => $this->model_main->get_teacher(),
 			'teacher_news' => $this->model_main->get_news_id($news_id),
-			'name' => $session_data['teacher_name'],
+			//'name_login' => $session_data['teacher_name'],
 			);
 		$this->load->view('page_news',$data);
 	}
