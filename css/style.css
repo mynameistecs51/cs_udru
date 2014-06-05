@@ -19,14 +19,15 @@ background-repeat : no-repeat;
 font-family : Tahoma, sans-serif;
 }*/
 a:link, a:visited {
-color : #fff;
+color : #0099FF;
 text-decoration : none;
 }
 a img {
 border : 0;
 }
 div.wrap {
-width : 620px;
+/*width : 620px;*/
+display:block; 
 margin : 0 auto;
 text-align : left;
 }
@@ -67,13 +68,15 @@ background : url(../image/pict_gallery/header-bg.png) no-repeat 50% 0;
 }
 div#header div#slide-holder {
 z-index : 40;
-width : 610px;
+display:block; 
+/*width : 610px;*/
 height : 299px;
 position : absolute;
 }
-div#header div#slide-holder div#slide-runner {
+div#header div#slide-holder div#slide-runner  {
 top : 9px;
-left : 9px;
+left : 100%;
+display:block; 
 width : 605px;
 height : 278px;
 overflow : hidden;
@@ -87,6 +90,7 @@ position : absolute;
 div#header div#slide-holder div#slide-controls {
 left : 0;
 bottom : 228px;
+display:block; 
 width : 605px;
 height : 46px;
 display : none;
