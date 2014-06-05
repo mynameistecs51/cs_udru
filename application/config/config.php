@@ -14,7 +14,7 @@ date_default_timezone_set('Asia/Bangkok');
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/cs_udru/';
+$config['base_url']	= 'http://te.dn-soft.net/';
 
 /*
 |--------------------------------------------------------------------------
@@ -225,7 +225,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'REALLY_LONG_NUMBER';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------

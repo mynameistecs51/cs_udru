@@ -5,7 +5,7 @@
 		<div class="panel-body alert-info" style="padding:10px;" align="center">
 			<div class="panel panel-primary " align="center">
 				<?php 
-				var_dump($this->session->userdata);
+				echo "test อย่าลืมลบเด้อ บรรทัดที่ 8 cs_udru.php";
 				foreach ($teacher as $key => $value) {
 					if($value->teacher_number == '1'){
 						echo anchor($value->teacher_link,'<div class="panel-body" >
