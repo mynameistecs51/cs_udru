@@ -72,7 +72,6 @@ class Ctl_main extends CI_Controller {
 		$data  = array(
 			"title" => "อ่านข่าว",
 			'teacher' => $this->model_main->get_teacher(),
-			'teacher_news' => $this->model_main->get_news_id($news_id),
 			);
 		$this->load->view('page_news',$data);
 	}
