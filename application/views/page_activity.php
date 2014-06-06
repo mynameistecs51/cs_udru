@@ -8,10 +8,10 @@
 
 
 <!--/top-->
-<div id="header">
-  <div class="wrap">
-   <div id="slide-holder">
-    <div id="slide-runner">
+<div id="header" >
+  <div class="wrap" >
+   <div id="slide-holder" >
+    <div id="slide-runner" style="width:940px; position:absolute;display : inline;overflow:hidden;">
       <a href=""><img id="slide-img-1" src="<?php echo base_url().'image/pict_gallery/nature-photo.png';?>" class="slide" alt="" /></a>
       <a href=""><img id="slide-img-2" src="<?php echo base_url().'image/pict_gallery/nature-photo1.png';?>" class="slide" alt="" /></a>
       <a href=""><img id="slide-img-3" src="<?php echo base_url().'image/pict_gallery/nature-photo2.png';?>" class="slide" alt="" /></a>
