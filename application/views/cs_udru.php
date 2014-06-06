@@ -39,9 +39,10 @@
 <div class="row col-md-8" >	
 	<!-- picture activity -->
 	<div class="panel panel-primary">
-		<div id="header" >
-		<div class="wrap "  >
-				<div id="slide-holder" class="col-md-1" >
+
+		<div id="header">
+		<div class="wrap " >
+				<div id="slide-holder" >
 					<div id="slide-runner" >
 						<a href=""><img id="slide-img-1" src="<?php echo base_url().'image/pict_gallery/nature-photo.png';?>" class="slide" alt="" /></a>
 						<a href=""><img id="slide-img-2" src="<?php echo base_url().'image/pict_gallery/nature-photo1.png';?>" class="slide" alt="" /></a>
