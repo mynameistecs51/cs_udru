@@ -28,7 +28,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<?php echo anchor('ctl_main/index','<h3><p class="label label-default">CS&IT UDRU</p></h3>','class="navbar-brand logo-nav"');?>
+				<?php echo anchor('ctl_main/index','<h3><p class="label label-default">สำนักงานเจ้าคณะจังหวัดขอนแก่น</p></h3>','class="navbar-brand logo-nav"');?>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->

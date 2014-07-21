@@ -41,7 +41,7 @@
 	<div class="panel panel-primary">
 
 		<div id="header">
-		<div class="wrap " >
+			<div class="wrap " >
 				<div id="slide-holder" >
 					<div id="slide-runner" >
 						<a href=""><img id="slide-img-1" src="<?php echo base_url().'image/pict_gallery/nature-photo.png';?>" class="slide" alt="" /></a>
@@ -64,8 +64,8 @@
 					if(!window.slider) var slider={};slider.data=[{"id":"slide-img-1","client":"nature beauty","desc":"nature beauty photography"},{"id":"slide-img-2","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-3","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-4","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-5","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-6","client":"nature beauty","desc":"add your description here"},{"id":"slide-img-7","client":"nature beauty","desc":"add your description here"}];
 				</script>
 			</div>
-		</div><!--/header-->
-	</div>
+		</div>
+	</div><!-- //header -->
 	<!-- end picture activity -->
 
 	<?php 
